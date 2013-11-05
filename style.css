@@ -1,0 +1,51 @@
+@import "reset.css";
+
+body {
+     width: 100%;
+     height: 100%;
+    background-image: url("img/bgbody.gif");
+}
+#wrapper {
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+}
+#left-sidebar {
+    width: 200px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 2px solid #999999;
+    float: left;
+}
+#main {
+    width: 68%;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 2px solid #999999;
+    float: left;
+    margin: 0 2px 0 2px;
+}
+#right-sidebar {
+    width: 200px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 2px solid #999999;
+    float: left;
+}
+
+.infa {
+    width: 100%;
+}
+#Country {
+    width: 200px;
+}
+#City {
+    width: 78%;
+}
+#Shop {
+    width: 50%;
+    margin-left: 25%;
+}
