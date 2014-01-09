@@ -6,7 +6,7 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
-    <script src="select.js"></script>
+    <script src="select_ver1.js"></script>
     <script src="button-color.js"></script>
     <script src="onKeyPress.js"></script>
 </head>
@@ -16,17 +16,22 @@
         </div>
         <div id="main">
             <div id="info">
-                <form action="#" method="post">
-                    <select  name="Country" id="Country">
-                        <option value="select-goods">Выберите товар</option>
+                <form action="#" method="get">
+                    <select  id="List0">
+                        <option value="selected-goods" selected="selected"> Выбор товара</option>
+                        <option value="doors"> Двери </option>
+                        <option value="windows"> Окна </option>
+                        <option value="tables"> Столы </option>
                     </select>
-                    <select  name="City" id="City">
-                        <option class="select" value="select-kind">Выберите вид</option>
+                    <select  id="List1">
+                        <option value="selected-kind" selected="selected"> Выбор вида </option>
                     </select>
-                    <select name="Shop" id="Shop">
-                        <option class="select" value="select-skin">Выберите эскиз</option>
+                    <select  id="List2">
+                        <option value="selected-skin" selected="selected"> Выбор шкурки </option>
                     </select>
+                    <input type="submit" value="Выбрать" >
                 </form>
+                <p id="out"></p>
             </div>
             <div class="select-color">
                 <div class="button-color"><button data-toggle-class="color-select">
