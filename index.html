@@ -29,11 +29,11 @@
                     <select  id="List2">
                         <option value="selected-skin" selected="selected"> Выбор шкурки </option>
                     </select>
-                    <input type="submit" value="Выбрать" >
+                    <input onclick="viewdiv('select-color');"  type="submit" value="Выбрать" >
                 </form>
                 <p id="out"></p>
             </div>
-            <div class="select-color">
+            <div id="select-color">
                 <div class="button-color"><button data-toggle-class="color-select">
                     Кликните для выбора цвета
                 </button>
@@ -52,18 +52,20 @@
             <div class="size">
 
                 <div class="size-button">
-                    <input onclick="viewdiv('sizes');" type="submit" value="Введите размеры">
+                    <input onclick="viewdiv('sizes');" type="submit" value="Введите размеры" >
                 </div>
                 <div id="sizes">
                 <div class="size-height">
                    <form><b>Введите значение высоты (Введите данные в таком формате 2.14): </b>
-                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="5" >
+                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="8" id="first" />
+
+                       <input type=text onkeypress="event.returnValue=(event.keyCode > 48) && (event.keyCode  < 57)? true : event.keyCode == 44"/>
                     <p><input type="submit" value="Отправить"></p>
                    </form>
                 </div>
                 <div class="size-width">
                     <form><b> Введите значение ширины (Введите данные в таком формате 2.14) : </b>
-                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="5" >
+                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="8" >
                     <p><input type="submit" value="Отправить"></p>
                     </form>
                 </div>

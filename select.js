@@ -1,65 +1,100 @@
-function dynamicSelect(id1, id2) {
-
-// Сперва необходимо проверить поддержку W3C DOM в браузере
-
- if (document.getElementById && document.getElementsByTagName) {
-
-// Определение переменных, ссылающихся на списки
-
-  var sel1 = document.getElementById(id1);
-  var sel2 = document.getElementById(id2);
-
-// Клонирование динамического списка
-
-  var clone = sel2.cloneNode(true);
-
-// Определение переменных для клонированных элементов списка
-
-  var clonedOptions = clone.getElementsByTagName("option");
-
-// Вызов функции собирающей вызываемый список
-
-  refreshDynamicSelectOptions(sel1, sel2, clonedOptions);
-
-// При изменении выбранного элемента в первом списке: // вызов функции пересобирающей вызываемый список
-
-  sel1.onchange = function() {
-  refreshDynamicSelectOptions(sel1, sel2, clonedOptions);
-  }
- }
+/*var dataList = {
+    'select-goods': {
+        'doors':"Двери",
+        'windows':"Окна",
+        'tables':"Столы"
+        },
+            'select-kind': {
+                'doors': {
+                    'easy':"Простая",
+                    'hard':"Сложная"
+                },
+                'windows': {
+                    'one': "Одинарное",
+                    'two': "Двойное"
+                },
+                'tables': {
+                    'tree': "Дерево",
+                    'metal': "Металлический"
+                }
+            },
+                    'select-skin': {
+                            'easy': {
+                                'new1': "Без узора",
+                                'new2': "Без ручки"
+                            },
+                            'hard': {
+                                'new4': "Без утеплителя",
+                                'new5': "C утеплителем"
+                            },
+                            'one': {
+                                'new6': "Без форточки",
+                                'new7': "С форточкой"
+                            },
+                            'two': {
+                                'new8': "Без стеклопакета",
+                                'new9': "Со стеклопакетом"
+                            },
+                            'tree': {
+                                'new10': "Без крышки",
+                                'new11': "С крышкой"
+                            },
+                            'metal': {
+                                'new12': "Без ящика",
+                                'new13': "C ящиком"
+                            }
+                   }
 }
 
-// Функция для сборки динамического списка
+var selectList = [
+    {name:"Country", value:"select-goods", id:"County" },
+    {name:"City", value:"select-kind", id:"City"},
+    {name:"Shop", value:"select-skin", id:"Shop"} ]
 
-function refreshDynamicSelectOptions(sel1, sel2, clonedOptions) {
 
-// Удаление всех элементов динамического списка
 
- while (sel2.options.length) {
-  sel2.remove(0);
- }
- var pattern1 = /( |^)(select)( |$)/;
- var pattern2 = new RegExp("( |^)(" + sel1.options[sel1.selectedIndex].value + ")( |$)");
+function my(){
+    var country = document.getElementById('Country');
+    var city = document.getElementById('City');
+    var shop = document.getElementById('Shop');
 
-// Перебор клонированных элементов списка
+    country.addEventListener('change', function(){
 
- for (var i = 0; i < clonedOptions.length; i++) {
+        console.log(country.value)
 
-// Если название класса клонированного option эквивалентно "select" // либо эквивалентно значению option первого списка
+        changeSelectedList(country.value,city);
 
-  if (clonedOptions[i].className.match(pattern1) ||
-  clonedOptions[i].className.match(pattern2)) {
+        //city.value = 'select';
+        //shop.value = 'select';
 
-// его нужно клонировать в динамически создаваемый список
 
-   sel2.appendChild(clonedOptions[i].cloneNode(true));
-  }
- }
+    }) ;
+
+
+
 }
 
-// Вызов скрипта при загрузке страницы
+city.addEventListener('change', function(){
 
-window.onload = function() {
-	dynamicSelect("Country", "City");
-	dynamicSelect("City", "Shop");
+    console.log(city.value)
+    //shop.value = 'select';
+})
+
+shop.addEventListener('change', function(){
+
+
+})
+
+
+
 }
+
+function changeSelectedList(value,collection){
+    console.log(collection)
+
+};
+
+
+
+
+

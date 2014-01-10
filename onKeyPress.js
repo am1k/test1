@@ -8,3 +8,15 @@ function viewdiv(id)
         el.style.display="block";
     }
 }
+
+function number(id){
+
+    var inp = document.getElementById('id');
+    inp.addEventListener('keypress', function(key){
+
+        if(key.charCode < 48 || key.charCode > 57) {
+            key.preventDefault();
+        //return false;
+       }
+})
+ }
