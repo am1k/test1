@@ -1,5 +1,4 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8"/>
     <title></title>
@@ -7,8 +6,8 @@
     <meta name="description" content=""/>
     <link rel="stylesheet" href="style.css" type="text/css"/>
     <script src="select_ver1.js"></script>
-    <script src="button-color.js"></script>
     <script src="onKeyPress.js"></script>
+    <script src="calculate.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -34,11 +33,11 @@
                 <p id="out"></p>
             </div>
             <div id="select-color">
-                <div class="button-color"><button data-toggle-class="color-select">
+                <div class="button-color"><button onclick="viewdiv('color-select');">
                     Кликните для выбора цвета
                 </button>
                 </div>
-                <div id="color-select">
+                <div id="color-select" >
                     <b>Выбор цветов:</b>
                     <button class="color-select1"> </button>
                     <button class="color-select2"> </button>
@@ -56,39 +55,31 @@
                 </div>
                 <div id="sizes">
                 <div class="size-height">
-                   <form><b>Введите значение высоты (Введите данные в таком формате 2.14): </b>
-                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="8" id="first" />
+                    <form name="calculator"><b>Введите значение высоты: </b>
+                        <input type=text name="height" value="0" onkeypress="event.returnValue=(event.keyCode > 48) && (event.keyCode  < 57)" maxlength="6">
+                        <br>
 
-                       <input type=text onkeypress="event.returnValue=(event.keyCode > 48) && (event.keyCode  < 57)? true : event.keyCode == 44"/>
-                    <p><input type="submit" value="Отправить"></p>
-                   </form>
-                </div>
-                <div class="size-width">
-                    <form><b> Введите значение ширины (Введите данные в таком формате 2.14) : </b>
-                    <input name="digit" required pattern="\d+(\.\d{2})?" class="size-input" maxlength="8" >
-                    <p><input type="submit" value="Отправить"></p>
+
+                        <b> Введите значение ширины: </b>
+                        <input type=text name="width" value="0" onkeypress="event.returnValue=(event.keyCode > 48) && (event.keyCode  < 57)" maxlength="6" >
+
+                        <ul>
+                            <li><label><input type="checkbox" name="option" value="condition1">condition1</label></li>
+                            <!--    <li><label><input type="checkbox" name="option" value="condition2">condition2</label></li>
+                                <li><label><input type="checkbox" name="option" value="condition3">condition3</label></li>
+                                <li><label><input type="checkbox" name="option" value="condition4">condition4</label></li>
+                                <li><label><input type="checkbox" name="option" value="condition5">condition5</label></li>  -->
+                        </ul>
                     </form>
-                </div>
-                </div>
-            </div>
-            <div class="checkbox-options">
-                <ul>
-                <form id="options">
-                    <li><label><input type="checkbox" value="condition1">condition1</label></li>
-                    <li><label><input type="checkbox" value="condition2">condition2</label></li>
-                    <li><label><input type="checkbox" value="condition3">condition3</label></li>
-                    <li><label><input type="checkbox" value="condition4">condition4</label></li>
-                    <li><label><input type="checkbox" value="condition5">condition5</label></li>
+                    <div id="sum1">
 
-                </form>
-                </ul>
+                    </div>
+                </div>
+                </div>
+
+
             </div>
-            <div class="sum">
-                 <button>
-                     Произвести расчет
-                 </button>
-            </div>
-            </div>
+    </div>
     </div>
 
 </body>

@@ -69,6 +69,7 @@ function fg(d) {
 };
   window.onload = function ()
 {
+    InitCalculate();
 var s = ["List0","List1","List2"];
 for (var i=0; i < s.length; i++) document.getElementById(s[i]).onchange =  function(a){return function(){fg(a)}}(i);
 fg(0);

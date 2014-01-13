@@ -111,8 +111,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .checkbox-options {
     margin-top: 300px;
 }
-.sum {
-    margin: 50px 0 0 200px;
+#sum1 {
+    margin: 50px 0 0 10px;
     float: left;
 }
 #sizes {
