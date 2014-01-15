@@ -12,7 +12,7 @@ function getChar(event) {
 
     return null; // специальная клавиша
 }
-
+var sum;
 function InitCalculate(){
 var form = document.forms['calculator'];
       console.log(form)
@@ -50,30 +50,70 @@ var form = document.forms['calculator'];
     var optionElem = form.elements.option;
     optionElem.onclick = calculate;
 
+    var option1Elem = form.elements.option;
+    option1Elem.onclick = calculate;
+
    calculate();
     function calculate() {
-        var sum = +heightElem.value * +widthElem.value;
+
+        sum = +heightElem.value + +widthElem.value;
         if (!sum) return;
 
-
-        if (!optionElem.checked) {
-            sum = +heightElem.value * +widthElem.value;
-        } else {
-
-            for(var i=0; i<+heightElem.value * +widthElem.value; i++) {
-                sum =  (+heightElem.value * +widthElem.value) + 5;
-            }
-        }
         sum = Math.round(sum);
 
-
+        var heught = sum;
+        document.getElementById('sum1').innerHTML= heught;
 
         var heught = ['Итоговая сумма:  '] + sum;
-        document.getElementById('sum1').innerHTML= heught;
-        //   document.getElementById('money-before').innerHTML = moneyElem.value;
-        //   document.getElementById('money-after').innerHTML = sum;
+
     }
+
+    function selectBox(){
+        var selectsArray = document.getElementsByClassName('selected1');
+        console.log(selectsArray);
+        for (var k=0; k<selectsArray.length; k++){
+            selectsArray[k].onchange = function(e){
+                if(e.target.checked) {
+                    sum += parseInt(e.target.value, 10);
+                    console.log(sum);
+                }  else {
+                    sum -= parseInt(e.target.value, 10) ;
+                    console.log(sum);
+                }
+
+                sum = Math.round(sum);
+                }
+            }
+        }
+          selectBox();
+
+
+    function chekBox(){
+        var optionsArray = document.getElementsByClassName('check');
+        console.log(optionsArray)
+        for (var z=0; z<optionsArray.length; z++){
+            optionsArray[z].onclick = function(e){
+                if(e.target.checked) {
+                    sum += parseInt(e.target.value, 10);
+                    console.log(sum);
+                }  else {
+                    sum -= parseInt(e.target.value, 10) ;
+                }
+
+                sum = Math.round(sum);
+                var checksum1 = sum;
+
+                var divResult = document.getElementById('checksum').innerHTML = checksum1;
+                // newCheckbox ('check');
+            }
+
+
+        }
+    }
+    chekBox();
+
 }
+
 
 
 

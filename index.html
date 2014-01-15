@@ -16,11 +16,11 @@
         <div id="main">
             <div id="info">
                 <form action="#" method="get">
-                    <select  id="List0">
-                        <option value="selected-goods" selected="selected"> Выбор товара</option>
-                        <option value="doors"> Двери </option>
-                        <option value="windows"> Окна </option>
-                        <option value="tables"> Столы </option>
+                    <select  id="List0" name="ololowa">
+                        <option value="selected-goods" selected="selected" > Выбор товара</option>
+                        <option value="3" class="selected1" > Двери </option>
+                        <option value="5" class="selected1"> Окна </option>
+                        <option value="8" class="selected1"> Столы </option>
                     </select>
                     <select  id="List1">
                         <option value="selected-kind" selected="selected"> Выбор вида </option>
@@ -64,15 +64,19 @@
                         <input type=text name="width" value="0" onkeypress="event.returnValue=(event.keyCode > 48) && (event.keyCode  < 57)" maxlength="6" >
 
                         <ul>
-                            <li><label><input type="checkbox" name="option" value="condition1">condition1</label></li>
-                            <!--    <li><label><input type="checkbox" name="option" value="condition2">condition2</label></li>
-                                <li><label><input type="checkbox" name="option" value="condition3">condition3</label></li>
-                                <li><label><input type="checkbox" name="option" value="condition4">condition4</label></li>
-                                <li><label><input type="checkbox" name="option" value="condition5">condition5</label></li>  -->
+                            <li><label><input type="checkbox" name="option" class="check"  value="5">condition1</label></li>
+                            <li><label><input type="checkbox" class="check" value="1">condition2</label></li>
+                            <li><label><input type="checkbox" class="check" value="2">condition3</label></li>
+                            <li><label><input type="checkbox" class="check" value="3">condition4</label></li>
+                            <li><label><input type="checkbox" class="check" value="4">condition5</label></li>
                         </ul>
                     </form>
                     <div id="sum1">
+                        <p>Итоговая сумма: </p>
+                    </div>
 
+                    <div id="checksum">
+                        <p>С дополнительными параметрами: </p>
                     </div>
                 </div>
                 </div>
