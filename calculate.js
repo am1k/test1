@@ -68,26 +68,6 @@ var form = document.forms['calculator'];
 
     }
 
-    function selectBox(){
-        var selectsArray = document.getElementsByClassName('selected1');
-        console.log(selectsArray);
-        for (var k=0; k<selectsArray.length; k++){
-            selectsArray[k].onchange = function(e){
-                if(e.target.checked) {
-                    sum += parseInt(e.target.value, 10);
-                    console.log(sum);
-                }  else {
-                    sum -= parseInt(e.target.value, 10) ;
-                    console.log(sum);
-                }
-
-                sum = Math.round(sum);
-                }
-            }
-        }
-          selectBox();
-
-
     function chekBox(){
         var optionsArray = document.getElementsByClassName('check');
         console.log(optionsArray)
